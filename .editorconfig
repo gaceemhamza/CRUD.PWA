@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0109: Un membre ne masque pas un membre hérité ; le mot clé new n'est pas requis
+dotnet_diagnostic.CS0109.severity = none

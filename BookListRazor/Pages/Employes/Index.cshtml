@@ -1,0 +1,79 @@
+﻿@page
+@model ProjectPWA.Pages.Employes.IndexModel
+
+
+<div class="container row p-0 m-0" style="background-color:aliceblue">
+        <div class="container" style="margin-left:8em;">
+            <div class="row">
+                <div class="col-sm">
+
+                    <button class="btn btn-primary btn-lg">Employes List</button>
+                </div>
+                <div class="col-sm">
+                    <a asp-page="AddEmploye" class="btn btn-primary btn-lg">Add  Employe</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-12 border p-3 mt-3">
+            <form method="post">
+                @if (Model.Employes.Count() > 0)
+                {
+                    <table class="table table-striped border">
+                        <tr class="table-secondary">
+                            <th>
+                                <label asp-for="Employes.FirstOrDefault().FirstName"></label>
+                            </th>
+                            <th>
+                                <label asp-for="Employes.FirstOrDefault().LastName"></label>
+                            </th>
+                            <th>
+                                <label asp-for="Employes.FirstOrDefault().Email"></label>
+                            </th>
+                            <th>
+                                <label asp-for="Employes.FirstOrDefault().Phone"></label>
+                            </th>
+                            <th>
+                                <label asp-for="Employes.FirstOrDefault().Adresse"></label>
+                            </th>
+
+                        </tr>
+                        @foreach (var item in Model.Employes)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(m => item.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.LastName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.Phone)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.Adresse)
+                                </td>
+                                <td>
+                                    <button asp-page-handler="Delete" asp-route-Id="@item.Id" onclick="return confirm('You Want to delete Employe?')" class="btn btn-danger">Delete</button>
+                                    <a asp-page="UpdateEmploye" asp-route-id="@item.Id" class="btn btn-success">Edit</a>
+                                </td>
+
+                            </tr>
+
+                        }
+                    </table>
+                }
+                else
+                {
+                    <p>No Users</p>
+                }
+            </form>
+        </div>
+
+
+</div>

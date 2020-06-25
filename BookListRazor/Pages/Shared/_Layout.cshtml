@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <link rel="stylesheet" href="cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" />
+
+
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg  ">
+
+            <img src="/Images/diet.jpg" style="height:8em;" />
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark"><h4 style="color: #1e3e7b">HOME</h4></a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link text-dark" asp-area="" asp-page="Employes/Index"><h4 style="color: #1e3e7b">MENU</h4></a>
+                    </li>
+
+
+                    <form class="form-inline my-2 my-lg-0" st>
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button type="button" class="btn btn-success">Search</button>
+
+                    </form>
+                    <div class="form-inline my-2 my-lg-0"  style="margin-left:65em;color:darkblue">
+
+                        <li>
+                            <select>
+                                <option hidden> Language</option>
+
+                                
+                                <option> Franch</option>
+                                <option> English </option>
+                                <option> Spanich</option>
+                            </select>
+                        </li>
+
+                    </div>
+                   
+
+                </ul>
+
+            </div>
+        </nav>
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer class="border-top footer text-muted" style=" background-color: #032c80">
+        <div class="container">
+            &copy; 2020 - Dietsmann Smart Labs - <a asp-area="" asp-page="/Privacy">
+                Dietsmann Smart Lab  &emsp; Adresse:8 Rue Paul Mesple
+                Zone D'activité  Commerciale  CAM31100 TOULOUSE
+            </a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
